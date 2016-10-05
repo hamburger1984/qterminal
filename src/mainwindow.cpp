@@ -138,7 +138,7 @@ void MainWindow::setup_ActionsMenu_Actions()
 
     QKeySequence seq;
 
-    Properties::Instance()->actions[CLEAR_TERMINAL] = new QAction(QIcon::fromTheme("edit-clear"), tr("&Clear Current Tab"), this);
+    Properties::Instance()->actions[CLEAR_TERMINAL] = new QAction(QIcon::fromTheme("edit-clear"), tr("&Clear Active Terminal"), this);
     seq = QKeySequence::fromString(settings.value(CLEAR_TERMINAL, CLEAR_TERMINAL_SHORTCUT).toString());
     Properties::Instance()->actions[CLEAR_TERMINAL]->setShortcut(seq);
     connect(Properties::Instance()->actions[CLEAR_TERMINAL], SIGNAL(triggered()), consoleTabulator, SLOT(clearActiveTerminal()));
