@@ -5,7 +5,6 @@ project(qterminal)
 include(GNUInstallDirs)
 
 set(STR_VERSION "0.7.1")
-set(LXQTBT_MINIMUM_VERSION "0.3.0")
 
 
 # additional cmake files
@@ -36,7 +35,8 @@ elseif(UNIX)
     find_package(Qt5X11Extras REQUIRED)
 endif()
 find_package(QTermWidget5 REQUIRED)
-find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+#Note: no run-time dependency on liblxqt, just a build dependency for lxqt_translate_ts/desktop
+find_package(lxqt REQUIRED)
 include(LXQtTranslateTs)
 message(STATUS "Qt version: ${Qt5Core_VERSION_STRING}")
 
